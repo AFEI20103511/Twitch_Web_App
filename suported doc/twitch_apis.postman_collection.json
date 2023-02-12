@@ -1,0 +1,269 @@
+{
+	"info": {
+		"_postman_id": "830830a8-19e6-4ff4-a558-681de8c94414",
+		"name": "Twitch APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10331431"
+	},
+	"item": [
+		{
+			"name": "Access token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.environment.set(\"twitch_access_token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{twitch_client_id}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{twitch_client_secret}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://id.twitch.tv/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"id",
+						"twitch",
+						"tv"
+					],
+					"path": [
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Game",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{twitch_access_token}}"
+					},
+					{
+						"key": "Client-Id",
+						"type": "text",
+						"value": "{{twitch_client_id}}"
+					}
+				],
+				"url": {
+					"raw": "https://api.twitch.tv/helix/games?name=fortnite",
+					"protocol": "https",
+					"host": [
+						"api",
+						"twitch",
+						"tv"
+					],
+					"path": [
+						"helix",
+						"games"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "fortnite"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Top games",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{twitch_access_token}}"
+					},
+					{
+						"key": "Client-Id",
+						"type": "text",
+						"value": "{{twitch_client_id}}"
+					}
+				],
+				"url": {
+					"raw": "https://api.twitch.tv/helix/games/top",
+					"protocol": "https",
+					"host": [
+						"api",
+						"twitch",
+						"tv"
+					],
+					"path": [
+						"helix",
+						"games",
+						"top"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Videos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{twitch_access_token}}"
+					},
+					{
+						"key": "Client-Id",
+						"type": "text",
+						"value": "{{twitch_client_id}}"
+					}
+				],
+				"url": {
+					"raw": "https://api.twitch.tv/helix/videos?game_id=21779&first=2",
+					"protocol": "https",
+					"host": [
+						"api",
+						"twitch",
+						"tv"
+					],
+					"path": [
+						"helix",
+						"videos"
+					],
+					"query": [
+						{
+							"key": "game_id",
+							"value": "21779"
+						},
+						{
+							"key": "first",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clips",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{twitch_access_token}}"
+					},
+					{
+						"key": "Client-Id",
+						"type": "text",
+						"value": "{{twitch_client_id}}"
+					}
+				],
+				"url": {
+					"raw": "https://api.twitch.tv/helix/clips?game_id=21779&first=2",
+					"protocol": "https",
+					"host": [
+						"api",
+						"twitch",
+						"tv"
+					],
+					"path": [
+						"helix",
+						"clips"
+					],
+					"query": [
+						{
+							"key": "game_id",
+							"value": "21779"
+						},
+						{
+							"key": "first",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Streams",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{twitch_access_token}}"
+					},
+					{
+						"key": "Client-Id",
+						"type": "text",
+						"value": "{{twitch_client_id}}"
+					}
+				],
+				"url": {
+					"raw": "https://api.twitch.tv/helix/streams/?game_id=18122&game_id=21779&game_id=33214&first=10",
+					"protocol": "https",
+					"host": [
+						"api",
+						"twitch",
+						"tv"
+					],
+					"path": [
+						"helix",
+						"streams",
+						""
+					],
+					"query": [
+						{
+							"key": "game_id",
+							"value": "18122"
+						},
+						{
+							"key": "game_id",
+							"value": "21779"
+						},
+						{
+							"key": "game_id",
+							"value": "33214"
+						},
+						{
+							"key": "first",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

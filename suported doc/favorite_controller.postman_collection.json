@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "d942bf4c-c6cb-4acf-94a8-7cf93320546c",
+		"name": "Favorite Controller",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10331431"
+	},
+	"item": [
+		{
+			"name": "Add favorite item",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"favorite\": {\n            \"twitch_id\": \"366282939\",\n            \"title\": \"WCS WINTER Europe qualifier II: Luolis vs Hellraiser\",\n            \"url\": \"https://www.twitch.tv/videos/366282939\",\n            \"thumbnail_url\": \"https://static-cdn.jtvnw.net/cf_vods/d2nvs31859zcd8/cf8f12b9daa4e2554818_divinesiatv_14772441901_5056332498//thumb/thumb366282939-480x480.jpg\",\n            \"broadcaster_name\": \"divinesiatv\",\n            \"game_id\": \"490422\",\n            \"item_type\": \"VIDEO\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/favorite",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"favorite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get favorite items",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/favorite",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"favorite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete favorite item",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"favorite\": {\n            \"twitch_id\": \"366282939\",\n            \"title\": \"WCS WINTER Europe qualifier II: Luolis vs Hellraiser\",\n            \"url\": \"https://www.twitch.tv/videos/366282939\",\n            \"thumbnail_url\": \"https://static-cdn.jtvnw.net/cf_vods/d2nvs31859zcd8/cf8f12b9daa4e2554818_divinesiatv_14772441901_5056332498//thumb/thumb366282939-480x480.jpg\",\n            \"broadcaster_name\": \"divinesiatv\",\n            \"game_id\": \"490422\",\n            \"item_type\": \"VIDEO\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/favorite",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"favorite"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
