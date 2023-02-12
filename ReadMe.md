@@ -1,10 +1,10 @@
 ## This is a full-stack Web App, implemented with Java Spring and React, deployed on AWS.
 
-Check out below url and have fun.
+**Check out below url and have fun.**
 
 https://qpaidv25rg.us-east-2.awsapprunner.com 
 
-The App provides several services:
+**The App provides several services:**
 
 1. Without register and login, click "Recommend for you!" to provide top streams, videos and clips.
 <img width="1427" alt="Screenshot 2023-02-12 at 11 17 59 AM" src="https://user-images.githubusercontent.com/22141794/218332214-05777ce3-a45b-4c0a-84bf-c35e966aee18.png">
