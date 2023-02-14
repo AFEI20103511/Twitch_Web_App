@@ -1,7 +1,7 @@
 spring:
   cache:
     caffeine:
-      spec: expireAfterWrite=1mm
+      spec: expireAfterWrite=1m
   sql:
     init:
       mode: ${INIT_DB:always}
